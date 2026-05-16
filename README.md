@@ -26,6 +26,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 | 2 | 2410498 | Nguyễn Danh Kiên | Thành viên |
 | 3 | 2410588 | Lê Đức Minh | Thành viên |
 | 4 | | | Thành viên |
+| 5 | 2410532 | Phí Lê Bảo Linh | Thành viên |
 
 ---
 
