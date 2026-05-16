@@ -22,8 +22,13 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
+<<<<<<< HEAD
 | 1 | 2410460 | Nguyễn Vân Khánh | Nhóm trưởng |
 | 2 | | | Thành viên |
+=======
+| 1 | | | Nhóm trưởng |
+| 2 | 2410498 | Nguyễn Danh Kiên | Thành viên |
+>>>>>>> 1ffa97109d162ba11d99fba592b3d59bc283aed2
 | 3 | | | Thành viên |
 | 4 | | | Thành viên |
 
