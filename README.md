@@ -16,13 +16,13 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 | | Thông tin |
 |---|---|
-| **Tên nhóm** | `<!-- VD: Nhóm 1 -->` |
-| **Lớp** | `<!-- VD: SE001.P11 -->` |
-| **Học kỳ** | `<!-- VD: HK2 2025-2026 -->` |
+| **Tên nhóm** | `Group 8` |
+| **Lớp** | `ICT` |
+| **Học kỳ** | `HK2 2025-2026` |
 
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
-| 1 | | | Nhóm trưởng |
+| 1 | 2410460 | Nguyễn Vân Khánh | Nhóm trưởng |
 | 2 | | | Thành viên |
 | 3 | | | Thành viên |
 | 4 | | | Thành viên |
