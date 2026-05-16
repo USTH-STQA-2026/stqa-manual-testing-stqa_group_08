@@ -24,7 +24,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 |---|------|-----------|---------|
 | 1 | 2410460 | Nguyễn Vân Khánh | Nhóm trưởng |
 | 2 | 2410498 | Nguyễn Danh Kiên | Thành viên |
-| 3 | | | Thành viên |
+| 3 | 2410588 | Lê Đức Minh | Thành viên |
 | 4 | | | Thành viên |
 
 ---
