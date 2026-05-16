@@ -23,7 +23,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
 | 1 | | | Nhóm trưởng |
-| 2 | | | Thành viên |
+| 2 | 2410498 | Nguyễn Danh Kiên | Thành viên |
 | 3 | | | Thành viên |
 | 4 | | | Thành viên |
 
