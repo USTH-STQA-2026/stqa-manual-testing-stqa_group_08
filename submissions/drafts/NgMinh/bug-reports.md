@@ -45,7 +45,7 @@
 
 **Minh chứng:**
 `<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](./images/ten-bug-01.png)
+> e.g. ![BUG-01](../../images/kien-bug01.png)
 
 **Đề xuất xử lý:**
 `<!-- Gợi ý cách sửa lỗi nếu có -->` 
