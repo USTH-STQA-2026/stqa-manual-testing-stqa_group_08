@@ -27,7 +27,7 @@
 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| | | | | | | | |
+| TC-01 | Kiểm tra việc mượn sách có sẵn **Lập trình Flutter cơ bản** thành công trên tài khoản hoạt động **ba.nguyen@email.com**| Đăng nhập thành công vào tài khoản hoạt động **ba.nguyen@email.com** | 1. Click vào biểu tượng **Mượn sách này**. 2. Xác nhận mượn sách. | Tài khoản hoạt động: **ba.nguyen@email.com**. Sách có sẵn: **Lập trình Flutter cơ bản** | Thông báo xác nhận **Mượn sách thành công!** | REQ-04 | EP |
 
 ---
 
