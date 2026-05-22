@@ -11,37 +11,36 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
+| **TC liên quan** | TC-48 |
+| **REQ liên quan** | REQ-04 |
+| **Mức độ** | High |
+| **Người phát hiện** | Nguyễn Danh Kiên |
+| **Ngày phát hiện** | 21/05/2026 |
 | **Trạng thái** | `<!-- Open / Closed -->` |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+An active member can borrow more than 3 books
 
 **Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Trình duyệt: Chrome 148.0.7778.168
+- Hệ điều hành: Windows 11
+- Ngôn ngữ giao diện: English
 
 **Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+Login successfully on active account **ba.nguyen@email.com** and have 3 books borrowed
 
 **Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+1. Click on the **Borrow this book** symbol.
+2. Confirm borrowing book.
 
 **Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+Error returned stating a member can only borrow up to 3 books
 
 **Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+Confirm notification **Book borrowed successfully!** pop up
 
 **Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+Violating the BRD: allowing a member to borrow more than 3 books
 
 **Minh chứng:**
 `<!-- Đính kèm ảnh chụp màn hình nếu có -->`
@@ -57,29 +56,36 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
+| **TC liên quan** | TC-49 |
+| **REQ liên quan** | REQ-04 |
+| **Mức độ** | High |
+| **Người phát hiện** | Nguyễn Danh Kiên |
+| **Ngày phát hiện** | 21/05/2026 |
 | **Trạng thái** | `<!-- Open / Closed -->` |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
+Suspended member be labeled as expired
+
+**Môi trường:**
+- Trình duyệt: Chrome 148.0.7778.168
+- Hệ điều hành: Windows 11
+- Ngôn ngữ giao diện: English
+
+**Điều kiện tiên quyết:**
+Login successfully on suspended account **cu.le@email.com**
 
 **Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
+1. Click on the **Borrow this book** symbol.
+2. Confirm borrowing book.
 
 **Kết quả mong đợi:**
-`<!-- -->`
+Refused to borrow book for the account is suspended
 
 **Kết quả thực tế:**
-`<!-- -->`
+Notification **Thành viên đã hết hạn. Không thể mượn sách.**
 
 **Tác động:**
-`<!-- -->`
+SRS violation: suspended member being labeled as expired
 
 **Minh chứng:**
 `<!-- -->`
