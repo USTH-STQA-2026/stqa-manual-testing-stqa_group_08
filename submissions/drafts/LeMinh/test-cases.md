@@ -10,6 +10,18 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
+| Does the user have permission to view the book list? | Yes | LIB001 (Librarian) | Display complete book list |
+|  | Yes | MEM002 (Member) | Display complete book list |
+| Book Status? | Available | Available | Display status as “Có sẵn” |
+|  | Borrowed | Borrowed | Display status as “Đã mượn” |
+| Is the book information complete? | Complete | Valid Book Data | Display correct book information |
+|  | Incomplete | NULL field (title/author/category) | Display default value |
+| Is the publication year valid? | Valid | 2020 | Display correct publication year |
+|  | Below minimum value | 999 | Display default value |
+| Is there a real-time status update event? | Borrow event | Borrow Event | Update status to “Đã mượn” immediately |
+|  | Return event | Return Event | Update status to “Có sẵn” immediately |
+
+
 | `<!-- tự điền -->` | | | |
 
 ### IDM — Tìm kiếm và lọc sách (REQ-03)
