@@ -37,7 +37,7 @@
 
 <!-- Mỗi TC phải ánh xạ ngược về ít nhất 1 dòng trong bảng IDM ở Bước 1. -->
 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+| TC ID | Test objectives | Precondition | Test steps | Input value | Expected result | REQ | Technique |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
 | TC-REQ02-01 | Verify that a librarian can view the complete book list | User account librarian@library.com / admin123 is active | Login. Open the Book List page | Email: librarian@library.com Password: admin123 | Display all 20 books | REQ-02 | EP |
 | TC-REQ02-02 | Verify that a member can view the complete book list | User account dam.tran@email.com / password123 is active | Login. Open the Book List page | Display all 20 books | REQ-02 | EP |
