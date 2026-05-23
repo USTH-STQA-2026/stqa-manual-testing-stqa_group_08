@@ -9,19 +9,19 @@
 ### IDM — Trả sách (REQ-05)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|Trạng thái thành viên | Active | MEM002 | Can return book |
+| Trạng thái thành viên | Active | MEM002 | Can return book |
 | | Expired | MEM005 | Cannot return book |
 | | Active | MEM003 | Can return book |
-| Hạn trả sách| Havent returned | BOOK003 | Book unavailable -> Warning|   
-| |Return late | BOOK006 | Book available -> Warning |
+| Hạn trả sách | Havent returned | BOOK003 | Book unavailable -> Warning|   
+| | Return late | BOOK006 | Book available -> Warning |
 | | Return on time | BOOK001 | Book available |
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|Trạng thái phiếu mượn| Borrowed, overdue | BR001 (due date 15/9/2024) | Displayed as "Quá hạn" + Warning|
-| | Returned, overdue | BR005 (due date 15/06/2024) -> returned at 20/06/2024| Displayed as "Đã trả" + Warning |
-| | Borrowed, overdue | BR003 (due date 15/10/2024)| Displayed as "Quá hạn" + Warning|
-| Hiện thị chức năng| Review all records | BR001 -> BR005 | Only the librarian can view|
+| Trạng thái phiếu mượn | Borrowed, overdue | BR001 (due date 15/9/2024) | Displayed as "Quá hạn" + Warning |
+| | Returned, overdue | BR005 (due date 15/06/2024) -> returned at 20/06/2024 | Displayed as "Đã trả" + Warning |
+| | Borrowed, overdue | BR003 (due date 15/10/2024) | Displayed as "Quá hạn" + Warning |
+| Hiện thị chức năng | Review all records | BR001 -> BR005 | Only the librarian can view |
 | | Filter overdue records | BR001 & BR003 | Users can filter their overdue records|
 
 
