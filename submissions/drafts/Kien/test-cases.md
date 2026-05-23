@@ -60,3 +60,5 @@
 | | Refuse: suspended | | | | X | |
 | | Refuse: expired | | | | | X |
 | | Set due date to 14 days later | X | | | | |
+
+---
