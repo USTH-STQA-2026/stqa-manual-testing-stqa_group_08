@@ -49,7 +49,8 @@
 
 ## Decision Table
 
-| | | Rule 1 | Rule 2| Rule 3 | Rule 4 | Rule 5 | 
+| | | Rule 1 | Rule 2| Rule 3 | Rule 4 | Rule 5 |
+|-------|---------|-------|---------|-----------|-----------|--------|
 | Conditions | Book available? | Yes | No | Yes | Yes | Yes |
 | | At borrowing limit? | No | - | Yes | No | No |
 | | Suspended? | No | - | - | Yes | No |
