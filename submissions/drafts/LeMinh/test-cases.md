@@ -51,8 +51,8 @@
 | TC-REQ03-02 | Verify searching books by author | User is logged into the system | Open Book List page. Enter keyword into search box | Nguyễn | Display books by authors containing Nguyễn (BOOK001, BOOK006, BOOK009, BOOK016) | REQ-03 | EP |
 | TC-REQ03-03 | Verify search is case-insensitive | User is logged into the system | Open Book List page. Search using lowercase and uppercase keywords | flutter, FLUTTER | Returns the same result as Flutter | REQ-03 | EP |
 | TC-REQ03-04 | Verify system handles non-existing keyword | User is logged into the system | Open Book List page. Enter keyword into search box | XYZ123 | Display "Không tìm thấy sách nào." | REQ-03 | EP |
-| TC-REQ03-05 | Verify filtering books by category | User is logged into the system | Open Book List page. Enter category into filter box | Kinh tế | REQ-03 | EP |
-| TC-REQ03-06 | Verify category filter is case-insensitive | Open Book List page. Enter category into | kinh tế, KINH TẾ | Returns the same result as Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP | 
+| TC-REQ03-05 | Verify filtering books by category | User is logged into the system | Open Book List page. Enter category into filter box | Kinh tế | Display only books in category Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP |
+| TC-REQ03-06 | Verify category filter is case-insensitive | User is logged into the system | Open Book List page. Enter category into | kinh tế, KINH TẾ | Returns the same result as Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP | 
  
 ---
 
