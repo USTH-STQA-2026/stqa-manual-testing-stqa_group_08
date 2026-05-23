@@ -25,11 +25,11 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| Từ khóa có tồn tại trong DB? | Có (tên sách) | `"Flutter"` | Hiển thị sách chứa "Flustter" |
-| | Có (tên tác giả) | `"Nguyễn"` | Hiển thị sách của tác giả Nguyễn |
-| | Không | `"XYZ123"` | Danh sách rỗng |
-| Phân biệt HOA/thường? | Chữ thường | `"flutter"` | Kết quả giống "Flutter" |
-| | Chữ HOA | `"FLUTTER"` | Kết quả giống "Flutter" |
+| Does the keyword exist in the database? | Yes (book title) | `"Flutter"` | Display books containing "Flutter" |
+| | Yes (author name) | `"Nguyễn"` | Display books written by authors containing "Nguyễn" |
+| | No | `"XYZ123"` | Empty result list |
+| Is the search case-sensitive? | Lowercase | `"flutter"` | Same result as "Flutter" |
+| | Uppercase | `"FLUTTER"` | Same result as "Flutter" |
 
 ---
 
@@ -58,7 +58,8 @@
 
 ## Tổng hợp
 
-| Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
+| Functional Group | Number of TC | Covered REQ | Applied IDM Techniques |
 |----------------|-------|---------|----------------------|
-| | | | |
-| **Tổng** | **<!-- ≥ 20 -->** | | |
+| View Book List | 8 | REQ-02 | EP |
+| Search & Filter Books | 6 | REQ-03 | EP |
+| **Total** | **14** | REQ-02 REQ-03 | EP |
