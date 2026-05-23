@@ -16,7 +16,7 @@
 | **Severity** | High |
 | **Finder** | Nguyễn Danh Kiên |
 | **Find date** | 21/05/2026 |
-| **Status** | `<!-- Open / Closed -->` |
+| **Status** | Open |
 
 **Title:**
 An active member can borrow the fourth book
@@ -60,7 +60,7 @@ Limit the borrow count to 3
 | **Severity** | High |
 | **Finder** | Nguyễn Danh Kiên |
 | **Find date** | 21/05/2026 |
-| **Status** | `<!-- Open / Closed -->` |
+| **Status** | Open |
 
 **Title:**
 Suspended member be labeled as expired
