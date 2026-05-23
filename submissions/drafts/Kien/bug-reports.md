@@ -10,44 +10,43 @@
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | TC-48 |
-| **REQ liên quan** | REQ-04 |
-| **Mức độ** | High |
-| **Người phát hiện** | Nguyễn Danh Kiên |
-| **Ngày phát hiện** | 21/05/2026 |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug ID** | BUG-01 |
+| **Related TC** | TC-02 |
+| **Related REQ** | REQ-04 |
+| **Severity** | High |
+| **Finder** | Nguyễn Danh Kiên |
+| **Find date** | 21/05/2026 |
+| **Status** | `<!-- Open / Closed -->` |
 
-**Tiêu đề:**
-An active member can borrow more than 3 books
+**Title:**
+An active member can borrow the fourth book
 
-**Môi trường:**
+**Environment:**
 - Trình duyệt: Chrome 148.0.7778.168
 - Hệ điều hành: Windows 11
 - Ngôn ngữ giao diện: English
 
-**Điều kiện tiên quyết:**
+**Precondition:**
 Login successfully on active account **ba.nguyen@email.com** and have 3 books borrowed
 
-**Bước tái hiện:**
+**Steps:**
 1. Click on the **Borrow this book** symbol.
 2. Confirm borrowing book.
 
-**Kết quả mong đợi:**
+**Expected result:**
 Error returned stating a member can only borrow up to 3 books
 
-**Kết quả thực tế:**
-Confirm notification **Book borrowed successfully!** pop up
+**Actual result:**
+Confirm notification **Book borrowed successfully!** pop up, a borrow card for the book appear in the **Borrow / Return**, the book state become **Borrowed**
 
-**Tác động:**
+**Consequence:**
 Violating the BRD: allowing a member to borrow more than 3 books
+    
+**Prove:**
+submission/image/kien-bug-01
 
-**Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](../../images/kien-bug01.png)
-
-**Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+**Fix suggestion:**
+Limit the borrow count to 3
 
 ---
 
@@ -55,43 +54,43 @@ Violating the BRD: allowing a member to borrow more than 3 books
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | TC-49 |
-| **REQ liên quan** | REQ-04 |
-| **Mức độ** | High |
-| **Người phát hiện** | Nguyễn Danh Kiên |
-| **Ngày phát hiện** | 21/05/2026 |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug ID** | BUG-02 |
+| **Related TC** | TC-04 |
+| **Related REQ** | REQ-04 |
+| **Severity** | High |
+| **Finder** | Nguyễn Danh Kiên |
+| **Find date** | 21/05/2026 |
+| **Status** | `<!-- Open / Closed -->` |
 
-**Tiêu đề:**
+**Title:**
 Suspended member be labeled as expired
 
-**Môi trường:**
+**Environment:**
 - Trình duyệt: Chrome 148.0.7778.168
 - Hệ điều hành: Windows 11
 - Ngôn ngữ giao diện: English
 
-**Điều kiện tiên quyết:**
+**Precondition:**
 Login successfully on suspended account **cu.le@email.com**
 
-**Bước tái hiện:**
+**Steps:**
 1. Click on the **Borrow this book** symbol.
 2. Confirm borrowing book.
 
-**Kết quả mong đợi:**
+**Expected result:**
 Refused to borrow book for the account is suspended
 
-**Kết quả thực tế:**
+**Actual result:**
 Notification **Thành viên đã hết hạn. Không thể mượn sách.**
 
-**Tác động:**
+**Consequence:**
 SRS violation: suspended member being labeled as expired
 
-**Minh chứng:**
-`<!-- -->`
+**Prove:**
+submission/image/kien-bug-02
 
-**Đề xuất xử lý:**
-`<!-- -->`
+**Fix suggestion:**
+Change the error notification message 
 
 ---
 
