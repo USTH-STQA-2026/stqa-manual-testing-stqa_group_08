@@ -18,8 +18,6 @@
 | View permission | Librarian | - Account: `librarian` <br> - Lookup: `MEM001` | Display records |
 | | Member - Lookup personal records | - Account: `ba.nguyen` <br> - Lookup: `MEM001` | Display records |
 | | Member - Lookup others' records | - Account: `ba.nguyen` <br> - Lookup: `MEM002` (of another member) | Msg: "Cannot access this borrow record." |
-| "Check overdue books" action | Overdue, **not checked** by librarian | `BR001` | Status: "**Borrowing**" (DB unupdated) |
-| | Overdue, **checked** by librarian | `BR001` | Status: "**Overdue**" (DB updated) |
 | Borrow status | Borrowing | `BR003` | Status: "**Borrowing**" |
 | | Returned | `BR002` | Status: "**Returned**" |
 | | Overdue | `BR001` | Status: "**Overdue**" |
@@ -35,16 +33,15 @@
 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-01 | Librarian lookup valid member (Multiple records) | Login successful as librarian@library.com | 1. Go to “**Search borrow records**”. <br> 2. Enter `MEM003` into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `MEM003` | Display `BR002`, `BR005` <br> Status: `Returned` | REQ-08 | EP, BVA |
-| TC-02 | Wrong casing search keyword | Login successful | 1. Go to “**Search borrow records**”. <br> 2. Enter `mem002` into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `mem002` | Msg: "No borrow records found." | REQ-08 | EP |
-| TC-03 | Leading/trailing spaces search keyword | Login successful | 1. Go to “**Search borrow records**”. <br> 2. Enter `"  MEM002  "` into the search field. <br> 3. Click "**Search**”. | - Account: librarian@library.com <br> - Search keyword: `"  MEM002  "` | Msg: "No borrow records found." | REQ-08 | EP |
-| TC-04 | Invalid search keyword | Login successful | 1. Go to "**Search borrow records**”. <br> 2. Enter `ABC123 / !@#` into the search field. <br> 3. Click "**Search**”. | - Account: librarian@library.com <br> - Search keyword: `ABC123 / !@#` | Msg: "No borrow records found." | REQ-08 | EP |
-| TC-05 | Empty search keyword | Login successful | 1. Go to "**Search borrow records**”. <br> 2. Enter `" "` into the search field. <br> 3. Click "**Search**”. | - Account: librarian@library.com <br> - Search keyword: `" "` | No action initiated | REQ-08 | EP, BVA |
-| TC-06 | Member look up personal info (Single record) | Login successful as biet.hoang@email.com | 1. Go to "**Search borrow records**”. <br> 2. Enter `MEM006` into the search field. <br> 3. Click "**Search**”. | - Account: biet.hoang@email.com <br> - Search keyword: `MEM006` | Display `BR003` <br> Status: `Borrowing` | REQ-08 | EP, BVA |
-| TC-07 | Member look up personal info (Zero record) | Login successful as cu.le@email.com | 1. Go to “**Search borrow records**”. <br> 2. Enter `MEM004` into the search field. <br> 3. Click “**Search**”. | - Account: cu.le@email.com <br> - Search keyword: `MEM004` | Empty list | REQ-08 | EP, BVA |
-| TC-08 | Member look up others' info | Login successful as ba.nguyen@email.com | 1. Go to “**Search borrow records**”. <br> 2. Enter `MEM004` into the search field. <br> 3. Click “**Search**”. | - Account: ba.nguyen@email.com <br> - Search keyword: `MEM004` | Msg: "Cannot access this borrow record." | REQ-08 | EP |
-| TC-09 | Overdue book - Not checked by librarian | Login successful as librarian@library.com | Go to “**Borrow / Return**”. | - Account: librarian@library.com <br> - Record ID: `BR001` | Status: "**Borrowing**" (DB unupdated) | REQ-08 | EP |
-| TC-10 | Overdue book - Checked by librarian | Login successful as librarian@library.com | 1. Go to “**Borrow / Return**”. <br> 2. Click “**Check overdue books**”. | - Account: librarian@library.com <br> - Record ID: `BR001` | Status: "**Overdue**" (DB updated) | REQ-08 | EP |
+| TC-01 | Librarian lookup valid member (Multiple records) | - Login successful as librarian. <br> - Member `MEM003` has multiple borrow records (min 2 books) in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `MEM003` | Display record `BR002`, `BR005` with: <br> - Record ID: `BR002` / `BR005` <br> - Member: `Trần Dựa Dẫm` <br> - Status: `Returned` <br> - Book Title, Borrow Date, Due Date: _Correctly display as recorded in the system_. | REQ-08 | EP, BVA |
+| TC-02 | Wrong casing search keyword | - Login successful with any valid account (Librarian or Member) <br> - Member `MEM002` has at least 1 borrow record in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `mem002` | Msg: "No borrow records found." | REQ-08 | EP |
+| TC-03 | Leading/trailing spaces search keyword | - Login successful with any valid account (Librarian or Member) <br> - Member `MEM002` has at least 1 borrow record in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `"  MEM002  "` | Msg: "No borrow records found." | REQ-08 | EP |
+| TC-04 | Invalid search keyword | Login successful with any valid account (Librarian or Member) | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `ABC123` | Msg: "No borrow records found." | REQ-08 | EP |
+| TC-05 | Empty search keyword | Login successful with any valid account (Librarian or Member) | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: librarian@library.com <br> - Search keyword: `" "` | No action initiated | REQ-08 | EP, BVA |
+| TC-06 | Member look up personal info (Single record) | - Login successful as biet.hoang@email.com <br> - Member `biet.hoang` (ID: `MEM006`) has exactly 1 borrow record in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: biet.hoang@email.com <br> - Search keyword: `MEM006` | Display record `BR003` with: <br> - Record ID: `BR003` <br> - Member: `Hoàng Cá Biệt` <br> - Status: `Borrowing` <br> - Book Title, Borrow Date, Due Date: _Correctly display as recorded in the system_. | REQ-08 | EP, BVA |
+| TC-07 | Member look up personal info (Zero record) | - Login successful as cu.le@email.com <br> - Member `cu.le` (ID: `MEM004`) has never borrowed a book in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: cu.le@email.com <br> - Search keyword: `MEM004` | Empty list | REQ-08 | EP, BVA |
+| TC-08 | Member look up others' info | - Login successful as ba.nguyen@email.com <br> - `MEM004` is a valid Member ID belonging to another member in the DB. | 1. Go to “**Search borrow records**”. <br> 2. Enter **Search keyword** into the search field. <br> 3. Click “**Search**”. | - Account: ba.nguyen@email.com <br> - Search keyword: `MEM004` | Msg: "Cannot access this borrow record." | REQ-08 | EP |
+| TC-09 | Verify **Overdue** status display | - Login successful with any valid account (Librarian or Member) <br> - The librarian has checked overdue books, and `BR001` is marked as “Overdue”. | 1. Go to “**Borrow / Return**”. <br> 2. Locate **Record ID** | - Account: librarian@library.com <br> - Record ID: `BR001` | Display record `BR001` with: <br> - Record ID: `BR001` <br> - Member: `Nguyễn Học Bá` <br> - Status: `Overdue` <br> - Book Title, Borrow Date, Due Date: _Correctly display as recorded in the system_. | REQ-08 | EP |
 
 ---
 
@@ -52,5 +49,5 @@
 
 | Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
 |----------------|-------|---------|----------------------|
-| Borrow Record Lookup | 10 | REQ-08 | EP, BVA |
+| Borrow Record Lookup | 9 | REQ-08 | EP, BVA |
 | **Tổng** | **<!-- ≥ 20 -->** | | |
