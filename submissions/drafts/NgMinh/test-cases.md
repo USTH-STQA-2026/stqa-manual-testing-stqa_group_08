@@ -10,23 +10,21 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| Trạng thái thành viên | Active | MEM002 | Can return book |
-| | Expired | MEM005 | Cannot return book |
-| | Active | MEM003 | Can return book |
-| Hạn trả sách | Havent returned | BOOK003 | Book unavailable -> Warning|   
-| | Return late | BOOK006 | Book available -> Warning |
-| | Return on time | BOOK001 | Book available |
+| Book status | Being borrowed | BOOK003 | "Trả sách" button available -> Change status to "Có sẵn" after returning |
+| | Available | BOOK009 | "Trả sách" button unavailable |
+| | Overdue | BOOK013 | "Trả sách" button available -> Change status to "Có sẵn" after returning |
+| Overdue date warning | dueDate < currentDate | BOOK013 | Show Warning message:" Đã quá hạn trả sách" |   
+| | dueDate > currentDate | BOOK005 | No Warning message |
+
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| Trạng thái phiếu mượn | Borrowed, overdue | BR001 (due date 15/9/2024) | Displayed as "Quá hạn" + Warning |
-| | Returned, overdue | BR005 (due date 15/06/2024) -> returned at 20/06/2024 | Displayed as "Đã trả" + Warning |
-| | Borrowed, overdue | BR003 (due date 15/10/2024) | Displayed as "Quá hạn" + Warning |
-| Hiện thị chức năng | Review all records | BR001 -> BR005 | Only the librarian can view |
-| | Filter overdue records | BR001 & BR003 | Users can filter their overdue records|
-
-
+| Record status | dueDate < currentDate | BR001(due date 01/09/2024)  | Marked as "Quá hạn" |
+| | dueDate < currentDate | BR005 (due date 15/06/2024) -> returned at 20/06/2024 | Return as "Đã trả" + Marked as "Quá hạn" |
+| | dueDate > currentDate | BR002 | Return as "Đã trả" |
+| Overdue Record checking | Librarian | Check BR001, BR003, BR005 | Able to check all the overdue records |
+| | Member |MEM002 check BR001| Anle to check their overdue record |
 
 
 
@@ -36,12 +34,12 @@
 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC05-01 |Verifying user not returning | Member has borrow record | MEM002 borrow B00K03 | Due date 15/09/2024, return after date | Return "Quá hạn" + Warning | REQ 05 | Equivalence partitioning |
-| TC05-02 |Verifying user returning late | Member has borrow record| MEM003 borrow BOOK006 | Due date 15/06/, returned 20/06/2024 |Return "Đã trả" + Warning | REQ 05 | Boundary Value Analysis |
-| TC05-03 | Verifying user returning on time | Member has borrow record | MEM003 borrow BOOK001 | Due date 24/08/2024, returned 20/08/2024 | Return "Đã trả"| REQ 05 | Equivalence partitioning |
-| TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật 
-| TC06-02 | Verifying correct record | Borrow record exists | Librarian check due date | BR001(MEM003) due date: 15/06/2024, return date: 20/06/2024 | Return "Quá hạn" and display Overdue list | REQ 06 | Boundary Value Analysis
-| TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật 
+| TC05-01 |Librarian verifying user not returning book | - Member MEM002 is currently active <br> - Member MEM002 has a borrow record <br> - The book BOOK003 is currently borrowed | - Click "Trả sách" to return book <br> - Check the dueDate and currentDate| Record BR001(MEM002 borrows BOOK003 - due date 15/09/2024) | Marked as "Quá hạn" + Warning message: "Đã quá hạn trả sách" | REQ 05 | Equivalence partitioning |
+| TC05-02 |Librarian verifying user returning book late | - Member MEM003 is currently active <br> - Member MEM003 has borrow record <br> - The book BK006 is currently borrowed |  - Click "Trả sách" to return book <br> - Check the dueDate and currentDate | Record BR005(MEM003 borrows BOOK06 - Due date 15/06/2024, returned 20/06/2024) |Return "Đã trả" + Warning message: "Trả sách quá hạn" | REQ 05 | Boundary Value Analysis |
+| TC05-03 | LIbrarian verifying expired or suspended user | - Member MEM004 is not currently active - Member MEM004  has no borrow record | - Click "Trả sách" to return book <br> - Check the dueDate and currentDate | Empty record | Display "Không tìm thấy phiếu mượn | REQ 05 | Equivalence partitioning |
+| TC06-01 | Librarian marking record as "Quá hạn" | - MEM003 has a borrow record <br> -BR005 is overdue | Search for "MEM003" in "Tra cứu phiếu mượn" category | Record BR005(MEM003 borrows BOOK06 - Due date: 15/06/2024, return date: 20/06/2024) | Return "Quá hạn" and display in Overdue list | REQ 06 | Boundary Value Analysis |
+| TC06-02 | Librarian checking all overdue records | - Members have borrow records <br> - The records must be overdue(dueDate < currentDate) | Librarian click on "Kiểm tra sách quá hạn" | Record BR001, BR002, BR003, BR004, BR005, BR006 | Display all the overdue records: BR001, BR003, BR005 | REQ 06 | Equivalence Partitioning |
+| TC06-03 | User checking their overdue record | - MEM002 is currently active <br> -MEM002 has a borrow record <br> - Record BR001 must be overdue | - Member click on "Mượn/Trả" <br> - Check the overdue record in "Phiếu mượn của tôi" | Account: ba.nguyen@email.com <br> -Record: BR001( MEM002 borrows BOOK003) | Display the Record BR001 with the "Quá hạn" mark | REQ 06 | Equivalence Partitioning | 
 
 ---
 
