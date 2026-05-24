@@ -27,9 +27,11 @@
 |---|---|---|---|
 | Does the keyword exist in the database? | Yes (book title) | `"Flutter"` | Display books containing "Flutter" |
 | | Yes (author name) | `"Nguyễn"` | Display books written by authors containing "Nguyễn" |
-| | No | `"XYZ123"` | Empty result list |
+| | No | `"XYZ123"` | Display "Không tìm thấy sách nào." |
 | Is the search case-sensitive? | Lowercase | `"flutter"` | Same result as "Flutter" |
 | | Uppercase | `"FLUTTER"` | Same result as "Flutter" |
+| Does the category exist in the database? | Yes | "Kinh tế" | Display books in category "Kinh tế" (BOOK007, BOOK014, BOOK015) | 
+| | No | "ABC" |  Display "Không tìm thấy sách nào." | 
 
 ---
 
@@ -39,20 +41,20 @@
 
 | TC ID | Test objectives | Precondition | Test steps | Input value | Expected result | REQ | Technique |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-REQ02-01 | Verify that a librarian can view the complete book list | User account librarian@library.com / admin123 is active | Login. Open the Book List page | Email: librarian@library.com Password: admin123 | Display all 20 books | REQ-02 | EP |
-| TC-REQ02-02 | Verify that a member can view the complete book list | User account dam.tran@email.com / password123 is active | Login. Open the Book List page | Display all 20 books | REQ-02 | EP |
-| TC-REQ02-03 | Verify that a borrowed book displays the correct status | User account ba.nguyen@email.com / password123 is active | Login. Open the Book List page. Find book BOOK003 - Kiểm thử phần mềm nhập môn | Book ID: BOOK003 | Display status as “Đang mượn” | REQ-02 | EP |
-| TC-REQ02-04 | Verify that an available book displays the correct status | User account dam.tran@email.com / password123 is active | Login. Open the Book List page. Find book BOOK001 - Lập trình Flutter cơ bản | Book ID: BOOK001 | Display status as “Có sẵn” | REQ-02 | EP |
-| TC-REQ02-05 | Verify that lost books are displayed correctly | User account librarian@library.com / admin123 is active | Login. Open the Book List page. Find book BOOK007 - Kinh tế vi mô | Book ID: BOOK007 | Display status as “Thất lạc” | REQ-02 | EP |
-| TC-REQ02-06 | Verify that book information is displayed correctly | User account biet.hoang@email.com / password123 is active | Login. Open the Book List page Find book BOOK010 - An toàn thông tin cơ bản | Book ID: BOOK010 | Display correct title, author (Trần Quốc An), category (Công nghệ), publication year (2023), and status (Có sẵn) | REQ-02 | EP | 
-| TC-REQ02-07 | Verify real-time status update after borrowing a book | User account ba.nguyen@email.com | User borrows BOOK008 - Mạng máy tính | Borrow Event on BOOK008 | Book status is updated immediately from “Có sẵn” to “Đang mượn” | REQ-02 | EP |
-| TC-REQ02-08 | Verify real-time status update after return a book | User account ba.nguyen@email.com | User returns BOOK008 - Mạng máy tính | Return Event on BOOK008 | Book status is updated immediately from “Đang mượn” to “Có sẵn” | REQ-02 | EP |
-| TC-REQ03-01 | Verify searching books by title | User is logged into the system | Open Book List page. Enter keyword into search box | Flutter | Display BOOK001 - Lập trình Flutter cơ bản | REQ-03 | EP |
-| TC-REQ03-02 | Verify searching books by author | User is logged into the system | Open Book List page. Enter keyword into search box | Nguyễn | Display books by authors containing Nguyễn (BOOK001, BOOK006, BOOK009, BOOK016) | REQ-03 | EP |
-| TC-REQ03-03 | Verify search is case-insensitive | User is logged into the system | Open Book List page. Search using lowercase and uppercase keywords | flutter, FLUTTER | Returns the same result as Flutter | REQ-03 | EP |
-| TC-REQ03-04 | Verify system handles non-existing keyword | User is logged into the system | Open Book List page. Enter keyword into search box | XYZ123 | Display "Không tìm thấy sách nào." | REQ-03 | EP |
-| TC-REQ03-05 | Verify filtering books by category | User is logged into the system | Open Book List page. Enter category into filter box | Kinh tế | Display only books in category Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP |
-| TC-REQ03-06 | Verify category filter is case-insensitive | User is logged into the system | Open Book List page. Enter category into | kinh tế, KINH TẾ | Returns the same result as Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP | 
+| TC-REQ02-01 | Verify that a librarian can view the complete book list | Login successful on librarian acccount | Open the Book List page | Email: librarian@library.com / admin123 | Display all 20 books | REQ-02 | EP |
+| TC-REQ02-02 | Verify that a member can view the complete book list | Login successful on member acccount | Open the Book List page | Email: dam.tran@email.com / password123 | Display all 20 books | REQ-02 | EP |
+| TC-REQ02-03 | Verify that a borrowed book displays the correct status | Login successful | Open the Book List page. Find book BOOK003 - Kiểm thử phần mềm nhập môn | Book ID: BOOK003 | Display status as “Đang mượn” | REQ-02 | EP |
+| TC-REQ02-04 | Verify that an available book displays the correct status | Login successful | Open the Book List page. Find book BOOK001 - Lập trình Flutter cơ bản | Book ID: BOOK001 | Display status as “Có sẵn” | REQ-02 | EP |
+| TC-REQ02-05 | Verify that lost books are displayed correctly | Login successful | Open the Book List page. Find book BOOK007 - Kinh tế vi mô | Book ID: BOOK007 | Display status as “Thất lạc” | REQ-02 | EP |
+| TC-REQ02-06 | Verify that book information is displayed correctly | Login successful | Login. Open the Book List page Find book BOOK010 - An toàn thông tin cơ bản | Book ID: BOOK010 | Display correct title, author (Trần Quốc An), category (Công nghệ), publication year (2023), and status (Có sẵn) | REQ-02 | EP |
+| TC-REQ02-07 | Verify real-time status update after borrowing a book | Login successful | Receive msg: "Book borrowed successfully!" | Borrow Event on BOOK008 | Book status is updated immediately from “Có sẵn” to “Đang mượn” | REQ-02 | EP |
+| TC-REQ02-08 | Verify real-time status update after return a book | Login successful | Receive msg: "Book returned successfully!" | Return Event on BOOK008 | Book status is updated immediately from “Đang mượn” to “Có sẵn” | REQ-02 | EP |
+| TC-REQ03-01 | Verify searching books by title | Login successful | Open Book List page. Enter keyword into search box | Flutter | Display BOOK001 - Lập trình Flutter cơ bản | REQ-03 | EP |
+| TC-REQ03-02 | Verify searching books by author | Login successful | Open Book List page. Enter keyword into search box | Nguyễn | Display books by authors containing Nguyễn (BOOK001, BOOK006, BOOK009, BOOK016) | REQ-03 | EP |
+| TC-REQ03-03 | Verify search is case-insensitive | Login successful | Open Book List page. Search using lowercase and uppercase keywords | flutter, FLUTTER | Returns the same result as Flutter | REQ-03 | EP |
+| TC-REQ03-04 | Verify system handles non-existing keyword | Login successful | Open Book List page. Enter keyword into search box | XYZ123 | Display "Không tìm thấy sách nào." | REQ-03 | EP |
+| TC-REQ03-05 | Verify filtering books by category | Login successful | Open Book List page. Enter category into filter box | Kinh tế | Display only books in category Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP |
+| TC-REQ03-06 | Verify category filter is case-insensitive | Login successful | Open Book List page. Enter category into filter box | kinh tế, KINH TẾ | Returns the same result as Kinh tế (BOOK007, BOOK014, BOOK015) | REQ-03 | EP | 
  
 ---
 
