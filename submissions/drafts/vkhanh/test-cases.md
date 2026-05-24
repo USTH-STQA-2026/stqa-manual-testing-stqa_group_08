@@ -10,19 +10,19 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| Search ID existence | Valid | `MEM002` | Display borrow records |
+| Search ID existence | Valid | `MEM002` | Display borrow records with full details: **Record ID**, **Book Title**, **Borrow Date**, **Due Date**, **Status**. |
 | | Wrong casing | `mem002` | Msg: "No borrow records found." |
 | | Leading/trailing spaces | `"  MEM002  "` | Msg: "No borrow records found." |
 | | Invalid | `ABC123` / `!@#` | Msg: "No borrow records found." |
 | | Empty | `" "` | No action initiated |
-| View permission | Librarian | - Account: `librarian` <br> - Lookup: `MEM001` | Display records |
-| | Member - Lookup personal records | - Account: `ba.nguyen` <br> - Lookup: `MEM001` | Display records |
+| View permission | Librarian | - Account: `librarian` <br> - Lookup: `MEM001` | Display borrow records with full details.|
+| | Member - Lookup personal records | - Account: `ba.nguyen` <br> - Lookup: `MEM001` | Display borrow records with full details. |
 | | Member - Lookup others' records | - Account: `ba.nguyen` <br> - Lookup: `MEM002` (of another member) | Msg: "Cannot access this borrow record." |
-| Borrow status | Borrowing | `BR003` | Status: "**Borrowing**" |
-| | Returned | `BR002` | Status: "**Returned**" |
-| | Overdue | `BR001` | Status: "**Overdue**" |
-|Record per member | Multiple records | `MEM003` | Display all records `BR002`, `BR005` |
-| | Single record | `MEM006` | Display only 1 record `BR003` |
+| Borrow status | Borrowing | `BR003` | Display full details with Status: "**Borrowing**". |
+| | Returned | `BR002` | Display full details with Status: "**Returned**". |
+| | Overdue | `BR001` | Display full details with Status: "**Overdue**". |
+|Record per member | Multiple records | `MEM003` | Display all records `BR002`, `BR005`, each containing full details. |
+| | Single record | `MEM006` | Display only 1 record `BR003` with full details. |
 | | Zero record | `MEM004` | Empty list |
 
 ---
