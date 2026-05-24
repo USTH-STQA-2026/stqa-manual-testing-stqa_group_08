@@ -78,7 +78,7 @@ Login successfully on suspended account **cu.le@email.com**
 2. Confirm borrowing book.
 
 **Expected result:**
-Refused to borrow book for the account is suspended
+Notification: **Thành viên đã tạm ngưng. Không thể mượn sách.**
 
 **Actual result:**
 Notification **Thành viên đã hết hạn. Không thể mượn sách.**
