@@ -11,44 +11,45 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **TC liên quan** | TC05-01 |
+| **REQ liên quan** | REQ05 |
+| **Mức độ** | Low |
+| **Người phát hiện** | Nguyễn Đức Minh |
+| **Ngày phát hiện** | 27/05/2026 |
+| **Trạng thái** | Open |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+No warning message when returning the book late
 
 **Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
+- Trình duyệt: Chrome Version 148.0.7778.179
+- Hệ điều hành: Window 11
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+- Member havent returned the book
+- The record has dueDate < currentDate
 
 **Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+1. Click on "Kiểm tra sách quá hạn"
+2. Search up "MEM002" in "Tra cứu phiếu mượn" category
+3. Click on "Trả sách"
 
 **Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+The record is marked as "Đã trả" and a warning message "Đã quá hạn trả sách"
 
 **Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+The record is marked as "Đã trả" and a message "Trả sách thành công"
 
 **Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+Violate the rule requirement, affecting the library's overdue management process
 
 **Minh chứng:**
 `<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](../../images/kien-bug01.png)
+> e.g. ![BUG-01] ![Bug-01](image.png)
 
 **Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+Add a warning message "Đã quá hạn trả sách" after member returning the book late
 
 ---
 
