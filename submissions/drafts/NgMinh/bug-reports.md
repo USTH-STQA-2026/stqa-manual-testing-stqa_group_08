@@ -13,7 +13,7 @@
 | **Mã lỗi** | BUG-01 |
 | **TC liên quan** | TC05-01 |
 | **REQ liên quan** | REQ05 |
-| **Mức độ** | Low |
+| **Mức độ** | High |
 | **Người phát hiện** | Nguyễn Đức Minh |
 | **Ngày phát hiện** | 27/05/2026 |
 | **Trạng thái** | Open |
@@ -46,7 +46,7 @@ Violate the rule requirement, affecting the library's overdue management process
 
 **Minh chứng:**
 `<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01] ![Bug-01](image.png)
+> ![Bug-01](../../images/Dminh-bug01.png)
 
 **Đề xuất xử lý:**
 Add a warning message "Đã quá hạn trả sách" after member returning the book late
@@ -58,32 +58,32 @@ Add a warning message "Đã quá hạn trả sách" after member returning the b
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **TC liên quan** | TC06-01 |
+| **REQ liên quan** | REQ 06 |
+| **Mức độ** | High |
+| **Người phát hiện** | Nguyễn Đức Minh |
+| **Ngày phát hiện** | 28/05/2024 |
+| **Trạng thái** | Open |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
+Record BR003 has not reached overdue date yet its still marked as "Quá hạn"
 
 **Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
+1. Click on "Tra cứu phiếu mượn"
+2. Search for "MEM006"
+3. Look at Record BR003 dueDate`
 
 **Kết quả mong đợi:**
-`<!-- -->`
+Record is marked as "Đang mượn"
 
 **Kết quả thực tế:**
-`<!-- -->`
+Record is marked as "Quá hạn"
 
 **Tác động:**
-`<!-- -->`
+Causing false violation, misleading the member and leading to false penalties for member
 
 **Minh chứng:**
-`<!-- -->`
+[Bug-02](../../images/Dminh-bug02.png)
 
 **Đề xuất xử lý:**
 `<!-- -->`
