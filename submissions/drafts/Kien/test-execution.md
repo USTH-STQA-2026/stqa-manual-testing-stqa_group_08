@@ -10,8 +10,8 @@
 | TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
 | 01 | Borrow book | Book borrowed successfully on active account not at the borrow limit | Book borrowed successfully on active account not at the borrow limit | Pass | | |
-| 02 | Borrow book | Fail to borrow book on active account at the borrow limit | Book borrow successfully | Fail | submission/image/kien-bug-01 | An active member can borrow the fourth book |
-| 03 | Borrow book | Fail to borrow book on suspended account with the reason of being suspended | Error notification state that member cannot borrow book for being expired | Fail | submission/image/kien-bug-02 | Suspended member be labeled as expired |
+| 02 | Borrow book | Fail to borrow book on active account at the borrow limit | Book borrow successfully | Fail | submission/image/kien-bug-01 | BUG-01 |
+| 03 | Borrow book | Fail to borrow book on suspended account with the reason of being suspended | Error notification state that member cannot borrow book for being expired | Fail | submission/image/kien-bug-02 | BUG-02 |
 | 04 | Borrow book | Fail to borrow book on expired account with the reason of being expired | Error notification state that member cannot borrow book for being expired | Pass | | |
 | 05 | Borrow book | Due date being 14 days after the borrow date | Due date being 14 days after the borrow date | Pass | | |
 | 06 | Borrow book | Unable to borrow borrowed books | Unable to borrow borrowed books | Pass | | |
