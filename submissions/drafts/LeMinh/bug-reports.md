@@ -46,7 +46,7 @@ Inputs "kinh tế" and "KINH TẾ" returns message "Không tìm thấy sách nà
 Category filtering behavior is inconsistent and does not support case-insensitive input, causing incorrect search/filter results for users.
 
 **Evidence:**
-> ![BUG-01](submissions/images/leminh-bug01.png)
+> ![BUG-01](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_08/blob/LeMinh/submissions/images/leminh-bug01.png)
 
 **Suggested Fix:**
 Normalize category input and database comparison to case-insensitive matching before filtering results.

@@ -15,8 +15,10 @@
 | Book Status? | Available | BOOK018 | Display status as “Có sẵn” |
 |  | Borrowed | BOOK002 | Display status as “Đang mượn” |
 |  | Lost | BOOK020 | Display status as "Thất lạc" |
-| Is the book information complete? | Complete | BOOK008 | Display information: Mạng máy tính - Lý Văn Tài • Công nghệ - 2022 |
-|  | Incomplete | NULL field (title/author/category) | Display missing/incorrect information |
+| Display Book info? | Name | BOOK008 | Mạng máy tính |
+| | Author | BOOK008 | Lý Văn Tài |
+| | Genre | BOOK008 | Công nghệ |
+| | Publish year | BOOK008 | 2022 |
 | Is there a real-time status update event? | Borrow event | Msg: "Book borrowed successfully!" | Status changes to "Borrowed" |
 |  | Return event | Msg: "Book returned successfully!" | Status changes to "Available" |
 
