@@ -40,7 +40,7 @@
 **Tác động:** <br> Core feature is blocked (unable to add members). The system incorrectly shows the same "Invalid email" error for everything (valid, duplicate, or blank emails).
 
 **Minh chứng:** 
-<br> Ảnh chụp màn hình: e.g. ![BUG-01-TC08](../../images/linh-tc-08.png), ![BUG-01-TC11](../../images/linh-tc-11.png), ![BUG-01-TC13](../../images/linh-tc-13.png)
+<br> Ảnh chụp màn hình: ![BUG-01-TC-08](../../images/linh-BUG-01-TC-08.png), ![BUG-01-TC-11](../../images/linh-BUG-01-TC-11.png), ![BUG-01-TC-13](../../images/linh-BUG-01-TC-13.png)
 
 **Đề xuất xử lý:** <br> 1. Fix the email format rule to correctly accept dots (. ) in the email address (e.g., allow linh.ng@email.com). <br> 2. Change the validation order to: Required Fields -> Format Verification -> Database Check (Duplication). Show a specific error message for each case.
 
@@ -75,7 +75,7 @@
 Saves invalid emails, breaking future notifications. It proves validation logic is completely backwards (accepts wrong formats, blocks right ones).
 
 **Minh chứng:**
-<br> Ảnh chụp màn hình: e.g. ![BUG-01-TC10](../../images/linh-tc-08.png)
+<br> Ảnh chụp màn hình: e.g. ![BUG-02](../../images/linh-BUG-02.png)
 
 **Đề xuất xử lý:** <br>
 Update the email check rule to block any email that does not have a dot (.) after the @ symbol

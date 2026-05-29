@@ -12,7 +12,7 @@
 |---|---|---|---|
 | Is the email valid? | Valid | `librarian@library.com` | Login successful |
 | | Invalid | `noone@email.com` | Msg: "Không tìm thấy thành viên" |
-| | Case-sensitive | `Librarian@library.com` | Msg: "Không tìm thấy thành viên" |
+| | Wrong casing | `Librarian@library.com` | Msg: "Không tìm thấy thành viên" |
 | Is the password valid? | Valid | `admin123` | Accepted |
 | | Invalid | `wrongpass` | Msg: "Mật khẩu không đúng" |
 | Is the input field empty? | Non-empty | (any value) | Normal processing  |
@@ -30,9 +30,6 @@
 | | Missing both @ and dot in domain | `userdomain` | Msg: "Email không hợp lệ." |
 | | Empty | `" "` | Msg: "Email không được để trống." |
 | | Duplicate email | `cu.le@email.com`| Msg: "Email đã tồn tại." |
-| | String length: within allowed range (1 ≤ L ≤ 255) | `cu.le@email.com` | Valid |
-| | String length: exceeds limit by exactly 1 char (L = 256) | A string of exactly 256 chars | Invalid |
-| | String length: exceeds limit significantly (L > 256) | A string of 400 chars | Invalid |
 | Is the phone number valid?| Valid | `0923456789` | Accepted | 
 | | Non-numeric | `abc@123` | Msg: "Số điện thoại không hợp lệ." |
 | | Wrong length | `092345678` / `09234567890`| Msg: "Số điện thoại không hợp lệ." |
