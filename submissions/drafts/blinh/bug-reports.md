@@ -75,7 +75,7 @@
 Saves invalid emails, breaking future notifications. It proves validation logic is completely backwards (accepts wrong formats, blocks right ones).
 
 **Minh chứng:**
-<br> Ảnh chụp màn hình: e.g. ![BUG-02](../../images/linh-BUG-02.png)
+<br> Ảnh chụp màn hình: ![BUG-02](../../images/linh-BUG-02.png)
 
 **Đề xuất xử lý:** <br>
 Update the email check rule to block any email that does not have a dot (.) after the @ symbol
