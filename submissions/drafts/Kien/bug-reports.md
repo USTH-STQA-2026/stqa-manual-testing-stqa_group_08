@@ -30,14 +30,14 @@ An active member can borrow the fourth book
 Login successfully on active account **ba.nguyen@email.com** and have 3 books borrowed
 
 **Steps:**
-1. Click on the **Borrow this book** symbol.
+1. Click on the **Mượn sách này** symbol.
 2. Confirm borrowing book.
 
 **Expected result:**
 Error returned stating a member can only borrow up to 3 books
 
 **Actual result:**
-Confirm notification **Book borrowed successfully!** pop up, a borrow card for the book appear in the **Borrow / Return**, the book state become **Borrowed**
+Confirm notification **Mượn sách thành công!**, a borrow card for the book appear in the **Mượn / Trả**, the book state become **Đang mượn**
 
 **Consequence:**
 Violating the BRD: allowing a member to borrow more than 3 books
@@ -74,7 +74,7 @@ Suspended member be labeled as expired
 Login successfully on suspended account **cu.le@email.com**
 
 **Steps:**
-1. Click on the **Borrow this book** symbol.
+1. Click on the **Mượn sách này** symbol.
 2. Confirm borrowing book.
 
 **Expected result:**
