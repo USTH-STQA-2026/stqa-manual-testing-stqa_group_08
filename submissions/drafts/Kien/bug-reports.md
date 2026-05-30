@@ -24,7 +24,7 @@ An active member can borrow the fourth book
 **Environment:**
 - Trình duyệt: Chrome 148.0.7778.168
 - Hệ điều hành: Windows 11
-- Ngôn ngữ giao diện: English
+- Ngôn ngữ giao diện: Tiếng Việt
 
 **Precondition:**
 Login successfully on active account **ba.nguyen@email.com** and have 3 books borrowed
@@ -68,7 +68,7 @@ Suspended member be labeled as expired
 **Environment:**
 - Trình duyệt: Chrome 148.0.7778.168
 - Hệ điều hành: Windows 11
-- Ngôn ngữ giao diện: English
+- Ngôn ngữ giao diện: Tiếng Việt 
 
 **Precondition:**
 Login successfully on suspended account **cu.le@email.com**
