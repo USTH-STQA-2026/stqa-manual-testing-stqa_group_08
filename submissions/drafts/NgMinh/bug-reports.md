@@ -5,8 +5,12 @@
 > Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
 ---
+**Môi trường:**
+- Trình duyệt: Chrome Version 148.0.7778.179
+- Hệ điều hành: Window 11
+- Ngôn ngữ giao diện: Tiếng Việt
 
-## BUG-01
+## BUG-01: No warning message when returning the book late
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -17,14 +21,6 @@
 | **Người phát hiện** | Nguyễn Đức Minh |
 | **Ngày phát hiện** | 27/05/2026 |
 | **Trạng thái** | Open |
-
-**Tiêu đề:**
-No warning message when returning the book late
-
-**Môi trường:**
-- Trình duyệt: Chrome Version 148.0.7778.179
-- Hệ điều hành: Window 11
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
 - Member havent returned the book
@@ -53,7 +49,7 @@ Add a warning message "Đã quá hạn trả sách" after member returning the b
 
 ---
 
-## BUG-02
+## BUG-02: Record BR003 has not reached due date yet its still marked as "Quá hạn"
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -64,14 +60,6 @@ Add a warning message "Đã quá hạn trả sách" after member returning the b
 | **Người phát hiện** | Nguyễn Đức Minh |
 | **Ngày phát hiện** | 27/05/2026 |
 | **Trạng thái** | Open |
-
-**Tiêu đề:**
-Record BR003 has not reached due date yet its still marked as "Quá hạn"
-
-**Môi trường:**
-- Trình duyệt: Chrome Version 148.0.7778.179
-- Hệ điều hành: Window 11
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
 - Member havent returned the book
