@@ -11,82 +11,45 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **TC liên quan** | TC-08 |
+| **REQ liên quan** | REQ-08 |
+| **Mức độ** | High |
+| **Người phát hiện** | Nguyễn Vân Khánh |
+| **Ngày phát hiện** | 20/05/2025 |
+| **Trạng thái** | Open |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+Member look up others' book records
 
 **Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
+- Trình duyệt: Chrome 148.0.7778.179
+- Hệ điều hành: Windows 11
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+- Login successful as ba.nguyen@email.com
+- `MEM004` is a valid Member ID belonging to another member in the DB.
 
 **Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+1. Go to “**Search borrow records**”.
+2. Enter `MEM004` into the search field.
+3. Click “**Search**”.
 
 **Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+Not allowed to view other members' borrow records.
 
 **Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+Display record `BR003` of member Hoàng Cá Biệt.
 
 **Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+Violates the BRD: Borrow records are not secured, allowing members to view others’ borrow records.
 
 **Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](../../images/kien-bug01.png)
+![BUG-01](../../images/vkhanh-bug-01.png)
 
 **Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+- Add an **authorization check**. If the account role is Member, the system must only allow them to view their own data. If they try to enter another member's ID, the backend must block the request and return an error.
+- For **Members**: Hide the search input field completely. When they open the page, the system should automatically load and display their personal borrow records.
+- For **Librarians**: Keep the search input field visible so they can look up any member as usual. 
 
 ---
-
-## BUG-02
-
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
-
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
-
-**Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
-
-**Kết quả mong đợi:**
-`<!-- -->`
-
-**Kết quả thực tế:**
-`<!-- -->`
-
-**Tác động:**
-`<!-- -->`
-
-**Minh chứng:**
-`<!-- -->`
-
-**Đề xuất xử lý:**
-`<!-- -->`
-
----
-
-<!-- Copy template BUG trên để thêm BUG-03, BUG-04, ... cho mỗi TC Fail -->
