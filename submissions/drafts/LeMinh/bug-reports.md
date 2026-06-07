@@ -8,47 +8,48 @@
 
 ## BUG-01
 
-| Thuộc tính | Chi tiết |
+| Attribute | Details |
 |-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug ID** | BUG-01 |
+| **Related TC** | TC-REQ03-06 |
+| **REQ liên quan** | REQ-03 |
+| **Mức độ** | Low |
+| **Người phát hiện** | Lê Đức Minh |
+| **Ngày phát hiện** | 26/05/2026 |
+| **Trạng thái** | Open |
 
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+**Title:**
+Category filter is case-sensitive when entering mixed uppercase/lowercase characters
 
-**Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
-- Ngôn ngữ giao diện: Tiếng Việt
+**Environment:**
+- Browser: Chrome 148.0.7778.179 
+- Operating System: Windows 11
+- UI Language: Vietnamese
 
-**Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+**Preconditions:**
+User has logged into the system successfully
 
-**Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+**Steps to Reproduce:**
+1. Open the Book List page
+2. Enter category keyword "Kinh tế" into the category filter box
+3. Verify that books BOOK007, BOOK014, and BOOK015 are displayed
+4. Enter category keyword kinh tế or "KINH TẾ"
 
-**Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+**Expected Result:**
+The system should return the same results for "Kinh tế", "kinh tế", and "KINH TẾ".
 
-**Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+**Actual Result:**
+The system only returns correct results for Kinh tế.
+Inputs "kinh tế" and "KINH TẾ" returns message "Không tìm thấy sách nào.".
 
-**Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+**Impact:**
+Category filtering behavior is inconsistent and does not support case-insensitive input, causing incorrect search/filter results for users.
 
-**Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](../../images/kien-bug01.png)
+**Evidence:**
+> ![BUG-01](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_08/blob/LeMinh/submissions/images/leminh-bug01.png)
 
-**Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+**Suggested Fix:**
+Normalize category input and database comparison to case-insensitive matching before filtering results.
 
 ---
 
