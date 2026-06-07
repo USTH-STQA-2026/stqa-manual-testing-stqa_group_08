@@ -51,8 +51,8 @@
 | TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
 | TC-01 | Borrow Book | Book borrowed successfully on active account not at the borrow limit | Book borrowed successfully on active account not at the borrow limit | Pass | | |
-| TC-02 | Borrow Book | Fail to borrow book on active account at the borrow limit | Book borrow successfully | Fail | [BUG-02](../bug-evidence/kien-bug-02.png) | BUG-02 |
-| TC-03 | Borrow Book | Fail to borrow book on suspended account with the reason of being suspended | System displayed message for expired account instead of suspended account | Fail | [BUG-03](../bug-evidence/kien-bug-03.png) | BUG-03 |
+| TC-02 | Borrow Book | Fail to borrow book on active account at the borrow limit | Book borrow successfully | Fail | [BUG-02](bug-evidence/kien-bug-02.png) | BUG-02 |
+| TC-03 | Borrow Book | Fail to borrow book on suspended account with the reason of being suspended | System displayed message for expired account instead of suspended account | Fail | [BUG-03](bug-evidence/kien-bug-03.png) | BUG-03 |
 | TC-04 | Borrow Book | Fail to borrow book on expired account with the reason of being expired | Error notification state that member cannot borrow book for being expired | Pass | | |
 | TC-05 | Borrow Book | Due date being 14 days after the borrow date | Due date being 14 days after the borrow date | Pass | | |
 | TC-06 | Borrow Book | Unable to borrow borrowed books | Unable to borrow borrowed books | Pass | | |
@@ -63,7 +63,7 @@
 | TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
 | TC-01 | Return Book | "**Trả sách**" button display right | "**Trả sách**" button display right  | Pass | | |
-| TC-02 | Return Book | Update record and book status, display warning message. | Do not have warning message | Fail | [BUG-04](../bug-evidence/Dminh-bug-04.png) | BUG-04 |
+| TC-02 | Return Book | Update record and book status, display warning message. | Do not have warning message | Fail | [BUG-04](bug-evidence/Dminh-bug-04.png) | BUG-04 |
 | TC-03 | Return Book | Update record and book status, display confirm message. | Book return successfully | Pass | | | 
 
 ### REQ-06 — Overdue Handling
@@ -79,11 +79,11 @@
 
 | TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
-| TC-01 | Member Management | New member created successfully. | Msg: "Email không hợp lệ" | Fail | [BUG-06-1](../bug-evidence/blinh-bug-06-1.png) | BUG-06 |
+| TC-01 | Member Management | New member created successfully. | Msg: "Email không hợp lệ" | Fail | [BUG-06-1](bug-evidence/blinh-bug-06-1.png) | BUG-06 |
 | TC-02 | Member Management | Msg: "Email không hợp lệ." | Msg: "Email không hợp lệ." | Pass | | |
-| TC-03 | Member Management | Msg: "Email không hợp lệ." | New member created successfully. | Fail | [BUG-05-1](../bug-evidence/blinh-bug-05-1.png) <br> [BUG-05-2](../bug-evidence/blinh-bug-05-2.png) | BUG-05 |
-| TC-04 | Member Management | Msg: "Email đã tồn tại." | System triggers format error before duplicate check: "Email không hợp lệ." | Fail | [BUG-06-2](../bug-evidence/blinh-bug-06-2.png) | BUG-06 |
-| TC-05 | Member Management | Msg: "Email không được để trống." | System triggers format error before empty check: "Email không hợp lệ." | Fail | [BUG-06-3](../bug-evidence/blinh-bug-06-3.png) | BUG-06 |
+| TC-03 | Member Management | Msg: "Email không hợp lệ." | New member created successfully. | Fail | [BUG-05-1](bug-evidence/blinh-bug-05-1.png) <br> [BUG-05-2](bug-evidence/blinh-bug-05-2.png) | BUG-05 |
+| TC-04 | Member Management | Msg: "Email đã tồn tại." | System triggers format error before duplicate check: "Email không hợp lệ." | Fail | [BUG-06-2](bug-evidence/blinh-bug-06-2.png) | BUG-06 |
+| TC-05 | Member Management | Msg: "Email không được để trống." | System triggers format error before empty check: "Email không hợp lệ." | Fail | [BUG-06-3](bug-evidence/blinh-bug-06-3.png) | BUG-06 |
 | TC-06 | Member Management | Msg: "Họ tên không được để trống." | Msg: "Họ tên không được để trống." | Pass | | |
 | TC-07 | Member Management | Msg: "Số điện thoại không được để trống." | Msg: "Email không hợp lệ." | Blocked | | BUG-06 |
 | TC-08 | Member Management | Msg: "Họ tên không được để trống." | Msg: "Họ tên không được để trống." (Successfully blocked) | Pass | | |
@@ -99,7 +99,7 @@
 | TC-04 | Borrow Record Lookup | Msg: "Không tìm thấy phiếu mượn." | Msg: "Không tìm thấy phiếu mượn." | Pass |  |  |
 | TC-05 | Borrow Record Lookup | No action initiated | No action initiated | Pass |  |  |
 | TC-06 | Borrow Record Lookup | Empty list | Empty list | Pass |  |  |
-| TC-07 | Borrow Record Lookup | Not allowed to view other members' borrow records. | Display record `BR003` of member Hoàng Cá Biệt | Fail | [BUG-07](../bug-evidence/vkhanh-bug-07.png) | BUG-07 |
+| TC-07 | Borrow Record Lookup | Not allowed to view other members' borrow records. | Display record `BR003` of member Hoàng Cá Biệt | Fail | [BUG-07](bug-evidence/vkhanh-bug-07.png) | BUG-07 |
 | TC-08 | Borrow Record Lookup | Display record `BR003` with full information. | Display record `BR003` with full information. Status is `Quá hạn` | Pass |  |  |
 
 ---
