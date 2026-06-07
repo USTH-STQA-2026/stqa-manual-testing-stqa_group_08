@@ -16,9 +16,9 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 | | Thông tin |
 |---|---|
-| **Tên nhóm** | `Group 8` |
-| **Lớp** | `ICT` |
-| **Học kỳ** | `HK2 2025-2026` |
+| **Tên nhóm** | Group 8 |
+| **Lớp** | ICT |
+| **Học kỳ** | HK2 2025-2026 |
 
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
