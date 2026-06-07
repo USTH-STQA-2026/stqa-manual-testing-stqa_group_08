@@ -44,7 +44,7 @@
 | TC-03 | Search & Filter Books | Lowercase and uppercase search return same result | “flutter” and “FLUTTER” returned the same result as “Flutter” | Pass | | |
 | TC-04 | Search & Filter Books | Display “Không tìm thấy sách nào.” | System displayed “Không tìm thấy sách nào.” correctly | Pass | | |
 | TC-05 | Search & Filter Books | Display only books in category “Kinh tế” | System displayed BOOK007, BOOK014, BOOK015 correctly | Pass | | |
-| TC-06 | Search & Filter Books | Category filter is case-insensitive | “kinh tế” and “KINH TẾ” returned different results from "Kinh tế" | Fail | ![BUG-01](../bug-evidence/leminh-bug-01.png) | BUG-01 |
+| TC-06 | Search & Filter Books | Category filter is case-insensitive | “kinh tế” and “KINH TẾ” returned different results from "Kinh tế" | Fail | [BUG-01](bug-evidence/leminh-bug-01.png) | BUG-01 |
 
 ### REQ-04 — Borrow Book
 
