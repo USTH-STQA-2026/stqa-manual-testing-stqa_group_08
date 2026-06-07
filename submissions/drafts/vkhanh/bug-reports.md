@@ -15,7 +15,7 @@
 | **REQ liên quan** | REQ-08 |
 | **Mức độ** | High |
 | **Người phát hiện** | Nguyễn Vân Khánh |
-| **Ngày phát hiện** | 20/05/2025 |
+| **Ngày phát hiện** | 20/05/2026 |
 | **Trạng thái** | Open |
 
 **Tiêu đề:**

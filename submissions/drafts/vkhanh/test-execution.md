@@ -7,18 +7,16 @@
 
 ## Kết quả chi tiết
 
-| Mã TC | Nhóm chức năng | Kết quả mong đợi (tóm tắt) | Kết quả thực tế | Kết luận | Minh chứng | Bug |
+| TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
 | TC-01 | Borrow Record Lookup | Display record `BR002`, `BR005` with full information. | Display record `BR002`, `BR005` with full information. | Pass |  |  |
-| TC-02 | Borrow Record Lookup | Msg: "No borrow records found." | Msg: "No borrow records found." | Pass |  |  |
-| TC-03 | Borrow Record Lookup | Msg: "No borrow records found." | Msg: "No borrow records found." | Pass |  |  |
-| TC-04 | Borrow Record Lookup | Msg: "No borrow records found." | Msg: "No borrow records found." | Pass |  |  |
+| TC-02 | Borrow Record Lookup | Msg: "Không tìm thấy phiếu mượn." | Msg: "Không tìm thấy phiếu mượn." | Pass |  |  |
+| TC-03 | Borrow Record Lookup | Msg: "Không tìm thấy phiếu mượn." | Msg: "Không tìm thấy phiếu mượn." | Pass |  |  |
+| TC-04 | Borrow Record Lookup | Msg: "Không tìm thấy phiếu mượn." | Msg: "Không tìm thấy phiếu mượn." | Pass |  |  |
 | TC-05 | Borrow Record Lookup | No action initiated | No action initiated | Pass |  |  |
-| TC-06 | Borrow Record Lookup | Display record `BR003` with full information. | Display record `BR003` with full information. | Pass |  |  |
-| TC-07 | Borrow Record Lookup | Empty list | Empty list | Pass |  |  |
-| TC-08 | Borrow Record Lookup | Not allowed to view other members' borrow records. | Display record `BR003` of member Hoàng Cá Biệt | Fail | vkhanh-bug-01 | BUG-01 |
-| TC-09 | Borrow Record Lookup | Record `BR001` status is `Overdue` | Status is `Overdue` | Pass |  |  |
-
+| TC-06 | Borrow Record Lookup | Empty list | Empty list | Pass |  |  |
+| TC-07 | Borrow Record Lookup | Not allowed to view other members' borrow records. | Display record `BR003` of member Hoàng Cá Biệt | Fail | [BUG-07](.../bug-evidence/vkhanh-bug-07.png) | BUG-07 |
+| TC-08 | Borrow Record Lookup | Display record `BR003` with full information. | Display record `BR003` with full information. Status is `Quá hạn` | Pass |  |  |
 
 ---
 
