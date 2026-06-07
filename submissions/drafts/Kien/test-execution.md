@@ -7,25 +7,31 @@
 
 ## Kết quả chi tiết
 
-| Mã TC | Nhóm chức năng | Kết quả mong đợi (tóm tắt) | Kết quả thực tế | Kết luận | Minh chứng | Bug |
+| TC ID | Functional groups | Expected result (summary) | Actual result | Conclusion | Prove | Bug |
 |-------|---------------|---------------------------|-----------------|---------|-----------|----| 
-| | | | | | | |
-
+| 01 | Borrow book | Book borrowed successfully on active account not at the borrow limit | Book borrowed successfully on active account not at the borrow limit | Pass | | |
+| 02 | Borrow book | Fail to borrow book on active account at the borrow limit | Book borrow successfully | Fail | submission/image/kien-bug-01 | BUG-01 |
+| 03 | Borrow book | Fail to borrow book on suspended account with the reason of being suspended | Error notification state that member cannot borrow book for being expired | Fail | submission/image/kien-bug-02 | BUG-02 |
+| 04 | Borrow book | Fail to borrow book on expired account with the reason of being expired | Error notification state that member cannot borrow book for being expired | Pass | | |
+| 05 | Borrow book | Due date being 14 days after the borrow date | Due date being 14 days after the borrow date | Pass | | |
+| 06 | Borrow book | Unable to borrow borrowed books | Unable to borrow borrowed books | Pass | | |
+| 07 | Borrow book | Unable to borrow lost books | Unable to borrow lost books | Pass | | |
+ 
 ---
 
 ## Tổng hợp kết quả
 
-| Chỉ số | Giá trị |
+| Statistic | Value |
 |--------|---------|
-| Tổng số test case | `<!-- số -->` |
-| Pass | `<!-- số -->` |
-| Fail | `<!-- số -->` |
-| Blocked | `<!-- số -->` |
-| Not Run | `<!-- số -->` |
-| **Tỷ lệ Pass** | `<!-- xx% -->` |
+| Number of test case | 87|
+| Pass | 5 |
+| Fail | 2 |
+| Blocked | 0 |
+| Not Run | 0 |
+| **Pass rate** | 71.429% |
 
 ### Kết quả theo nhóm chức năng
 
-| Nhóm | Tổng TC | Pass | Fail | Tỷ lệ Pass |
+| Functional groups | Total TC | Pass | Fail | Pass rate |
 |------|---------|------|------|------------|
-| | | | | |
+| Borrow book | 7 | 5 | 2 | 71.429% |

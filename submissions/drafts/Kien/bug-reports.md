@@ -10,45 +10,43 @@
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug ID** | BUG-01 |
+| **Related TC** | TC-02 |
+| **Related REQ** | REQ-04 |
+| **Severity** | High |
+| **Finder** | Nguyễn Danh Kiên |
+| **Find date** | 21/05/2026 |
+| **Status** | Open |
 
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+**Title:**
+An active member can borrow the fourth book
 
-**Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
+**Environment:**
+- Trình duyệt: Chrome 148.0.7778.168
+- Hệ điều hành: Windows 11
 - Ngôn ngữ giao diện: Tiếng Việt
 
-**Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+**Precondition:**
+Login successfully on active account **ba.nguyen@email.com** and have 3 books borrowed
 
-**Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+**Steps:**
+1. Click on the **Mượn sách này** symbol.
+2. Confirm borrowing book.
 
-**Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+**Expected result:**
+Error returned stating a member can only borrow up to 3 books
 
-**Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+**Actual result:**
+Confirm notification **Mượn sách thành công!**, a borrow card for the book appear in the **Mượn / Trả**, the book state become **Đang mượn**
 
-**Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+**Consequence:**
+Violating the BRD: allowing a member to borrow more than 3 books
+    
+**Prove:**
+submission/image/kien-bug-01
 
-**Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-> e.g. ![BUG-01](../../images/kien-bug01.png)
-
-**Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+**Fix suggestion:**
+Limit the borrow count to 3
 
 ---
 
@@ -56,36 +54,43 @@
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug ID** | BUG-02 |
+| **Related TC** | TC-04 |
+| **Related REQ** | REQ-04 |
+| **Severity** | High |
+| **Finder** | Nguyễn Danh Kiên |
+| **Find date** | 21/05/2026 |
+| **Status** | Open |
 
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
+**Title:**
+Suspended member be labeled as expired
 
-**Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
+**Environment:**
+- Trình duyệt: Chrome 148.0.7778.168
+- Hệ điều hành: Windows 11
+- Ngôn ngữ giao diện: Tiếng Việt 
 
-**Kết quả mong đợi:**
-`<!-- -->`
+**Precondition:**
+Login successfully on suspended account **cu.le@email.com**
 
-**Kết quả thực tế:**
-`<!-- -->`
+**Steps:**
+1. Click on the **Mượn sách này** symbol.
+2. Confirm borrowing book.
 
-**Tác động:**
-`<!-- -->`
+**Expected result:**
+Notification: **Thành viên đã tạm ngưng. Không thể mượn sách.**
 
-**Minh chứng:**
-`<!-- -->`
+**Actual result:**
+Notification **Thành viên đã hết hạn. Không thể mượn sách.**
 
-**Đề xuất xử lý:**
-`<!-- -->`
+**Consequence:**
+SRS violation: suspended member being labeled as expired
+
+**Prove:**
+submission/image/kien-bug-02
+
+**Fix suggestion:**
+Change the error notification message 
 
 ---
 
