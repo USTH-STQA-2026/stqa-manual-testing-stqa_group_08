@@ -123,7 +123,7 @@ Fix the conditional logic to correctly map the "Suspended" account status to its
 | Attribute | Details |
 |-----------|---------|
 | **Bug ID** | BUG-04 |
-| **Related TC** | TC-02 |
+| **Related TC** | TC-02, TC-04 |
 | **Related REQ** | REQ-05 |
 | **Severity** | Low |
 | **Reported by** | Nguyễn Đức Minh |
