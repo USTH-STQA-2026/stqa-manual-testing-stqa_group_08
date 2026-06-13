@@ -16,12 +16,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total test cases | 51 |
-| Pass | 41 |
-| Fail | 9 |
+| Total Test Cases | 48 |
+| Pass | 36 |
+| Fail | 11 |
 | Blocked | 1 |
 | Not Run | 0 |
-| **Pass Rate** | **80.39%** |
+| **Pass Rate** | **75%** |
 | **Total bugs found** | **7** |
 
 ### Distribution by Functional Group
@@ -29,14 +29,14 @@
 | Functional Group | TCs | Pass | Fail | Blocked | Bug IDs | Pass Rate | Rating |
 |-----------------|-----|------|------|---------|---------|-----------|--------|
 | Login | 6 | 6 | 0 | 0 | — | 100% | Good |
-| View Book List | 8 | 8 | 0 | 0 | — | 100% | Good |
+| View Book List | 2 | 2 | 0 | 0 | — | 100% | Good |
 | Search & Filter Books | 6 | 5 | 1 | 0 | BUG-01 | 83.33% | Minor issue |
 | Borrow Book | 7 | 5 | 2 | 0 | BUG-02, BUG-03 | 71.43% | Needs fixing |
-| Return Book | 3 | 2 | 1 | 0 | BUG-04 | 66.67% | Needs fixing |
+| Return Book | 4 | 2 | 2 | 0 | BUG-04 | 50% | Needs fixing |
 | Overdue Handling | 4 | 4 | 0 | 0 | — | 100% | Good |
-| Member Management | 9 | 4 | 4 | 1 | BUG-05, BUG-06 | 44.44% | Critical issues |
-| Borrow Record Lookup | 8 | 7 | 1 | 0 | BUG-07 | 87.5% | Needs fixing |
-| **Total** | **51** | **41** | **9** | **1** | | **80.39%** | |
+| Member Management | 10 | 5 | 4 | 1 | BUG-05, BUG-06 | 50% | Critical issues |
+| Borrow Record Lookup | 9 | 8 | 1 | 0 | BUG-07 | 88.89% | Needs fixing |
+| **Total** | **48** | **36** | **11** | **1** | | **75%** | |
 
 ### Bug Distribution by Severity
  
@@ -53,7 +53,7 @@
 | Technique | Applied to | No. of TCs | How it was applied |
 |-----------|-----------|------------|-------------------|
 | Equivalence Partitioning (EP) | REQ-01 to REQ-08 (all) | 46 | Inputs were partitioned into valid/invalid classes (e.g., valid email vs. unregistered email vs. empty). One representative value was tested per partition to avoid redundancy. |
-| Boundary Value Analysis (BVA) | REQ-04, REQ-08 | 4 | Tested at the exact borrow limit boundary (2 books = allowed, 3 books = blocked) and at the edge of empty/single/multiple record counts for borrow record lookup. |
+| Boundary Value Analysis (BVA) | REQ-04, REQ-05, REQ-06, REQ-08 | 5 | Tested at the exact borrow limit boundary (2 books = allowed, 3 books = blocked), at the due date boundary (dueDate = currentDate per REQ-06), and at the edge of empty/single/multiple record counts for borrow record lookup. |
 | Decision Table | REQ-04 | 1 | All combinations of borrow conditions (suspended, expired, book availability, borrow limit) were mapped into a decision table with 5 rules to ensure no condition combination was missed. |
 
 ---
